@@ -38,6 +38,9 @@ If you'd like to see all of the data you have at your disposal you can inspect t
 ### JSON Endpoint
 Or you can make a request to /actions/instafeed if you'd like a JSON endpoint of the same data.
 
+## Known Limitations
+Currently this plugin only queries the first page of results from the `users/self/media/recent` endpoint. This means we only receive the 20 most recent posts. If you'd like more you can follow the helpful info in [this Stack Overflow article](https://stackoverflow.com/a/13728092) about pulling the next set repeatedly until you reach the end.
+
 ## Cache
 
 To avoid spamming the Instagram API your data will be cached for 1 hour after an uncached request is made. You may adjust this amount if you'd like in the plugin settings for a shorter or longer cache lifetime.
