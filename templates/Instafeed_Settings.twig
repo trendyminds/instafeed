@@ -1,0 +1,36 @@
+{#
+/**
+ * Instafeed plugin for Craft CMS
+ *
+ * Instafeed Settings.twig
+ *
+ * @author    TrendyMinds
+ * @copyright Copyright (c) 2018 TrendyMinds
+ * @link      https://trendyminds.com
+ * @package   Instafeed
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{{forms.textField({
+    label: 'OAuth Token',
+    required: true,
+    instructions: 'If you do not have one, you can sign up for one <a href="https://www.instagram.com/developer" target="_blank">on the Instagram developer site</a>.',
+    name: 'oauthToken',
+    value: settings.oauthToken,
+    errors: settings.getErrors('oauthToken')
+  })
+}}
+
+{{forms.textField({
+    label: 'Cache Duration',
+    required: true,
+    instructions: 'Set the time (in seconds) to cache the data from the Instagram API. This will help avoid spamming the Instagram API continuously for every request.',
+    placeholder: '3600',
+    name: 'cacheDuration',
+    value: settings.cacheDuration,
+    errors: settings.getErrors('cacheDuration')
+  })
+}}
