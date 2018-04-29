@@ -24,6 +24,17 @@ To pull the 20 most recent photos from your account simply loop through them usi
 {% endfor %}
 ```
 
+If you'd like to see all of the data you have at your disposal you can inspect the `post` using the `{{dump(post)}}` function when `devMode` is set to `true`. For instance:
+
+```twig
+{# Wrap output in pre tag for better formatting #}
+<pre>
+  {% for post in craft.instafeed.posts %}
+    {{dump(post)}}
+  {% endfor %}
+</pre>
+```
+
 ### JSON Endpoint
 Or you can make a request to /actions/instafeed if you'd like a JSON endpoint of the same data.
 
